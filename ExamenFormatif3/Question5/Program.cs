@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 
 namespace Question5
 {
+    /// <summary>
+    /// Commentaires??
+    /// 13/15
+    /// </summary>
     class Program
     {
 
@@ -14,15 +18,15 @@ namespace Question5
 
         static void Main(string[] args)
         {
-            bool[] Niveau = new bool[100];
+            bool[] Niveau = new bool[100];      
             int joueur = 0;
             int nbFalse = 0;
-            Random ranTruFal = new Random();
+            Random ranTruFal = new Random();    // randomTrueFalse
             bool fini = false;
-            bool toucheVF = false;
+            bool toucheVF = false;              // VF?
             string touches;
-            bool tabFini = false;
-            int Tentative = 0;
+            bool tabFini = false;               // Trouver un nom plus significatif
+            int Tentative = 0;                  // minuscules
 
 
 
@@ -30,7 +34,7 @@ namespace Question5
             joueur = ranTruFal.Next(0, 6);
             Niveau­[0] = true;
             Niveau[99] = true;
-            while (tabFini != true)
+            while (tabFini != true)         // À quoi sert cette boucle? C'est déjà géré par le for en dessous
             {
                 for (int i = 1; i < Niveau.Length - 1; i++)
                 {
@@ -118,7 +122,7 @@ namespace Question5
                             break;
                         case "G":
                             toucheVF = true;
-                            if ((joueur + 2) < 99 && Niveau[joueur + 2] == true)
+                            if ((joueur + 2) < 99 && Niveau[joueur + 2] == true)    // < 100
                             {
 
                                 joueur += 2;
@@ -131,8 +135,8 @@ namespace Question5
                             break;
                         case "H":
                             toucheVF = true;
-                            if ((joueur + 4) < 99 && Niveau[joueur + 4] == true)
-                            {
+                            if ((joueur + 4) < 99 && Niveau[joueur + 4] == true)      // < 100
+                            {   
 
                                 joueur += 4;
                             }
@@ -166,6 +170,8 @@ namespace Question5
 
             } while (touches.ToUpper() != "Q" || fini == true);
         }
+
+        // Laisser de l'espace et ajouter un commentaire qui explique ce que fait la fonction
         private static void AffichageEntier(bool[] niveau, int joueur)
         {
             for (int i = 0; i < niveau.Length; i++)
@@ -186,10 +192,12 @@ namespace Question5
                 Console.Write(".");
             }
         }
+
+        // Laisser de l'espace et ajouter un commentaire qui explique ce que fait la fonction
         private static void Affichage10(bool[] niveau, int joueur)
         {
 
-            for (int i = joueur; i < joueur + 10; i++)
+            for (int i = joueur; i < joueur + 10; i++)  // Que se passe-t-il si on est à la case 95?
             {
                 if (i == joueur)
                 {
